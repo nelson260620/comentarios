@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura los servicios antes de construir la aplicación
+// Configura los servicios antes de construir la aplicaciÃ³n
 
 
-// Asegúrate de agregar las dependencias necesarias
+// AsegÃºrate de agregar las dependencias necesarias
 builder.Services.AddControllers();
 builder.Services.AddDbContext<DataBaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -19,9 +19,9 @@ builder.Services.AddTransient<SeederDB>();
 
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build(); // Aquí se construye la aplicación
+var app = builder.Build(); // AquÃ­ se construye la aplicaciÃ³n
 
-// Configura el middleware de la aplicación
+// Configura el middleware de la aplicaciÃ³n
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -42,4 +42,4 @@ app.MapControllerRoute(
 //    name: "default",
 //    pattern: "{controller=Comentarios}/{action=Listar}/{id?}");
 
-//app.Run();
+app.Run();
